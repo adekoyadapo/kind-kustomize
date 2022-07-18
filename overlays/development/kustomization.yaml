@@ -1,0 +1,27 @@
+---
+namespace: dev
+resources:
+  - ../../base
+
+images:
+- name: nginx
+  newName: nginx
+  newTag: 1.17.1
+
+replicas:
+- name: frontend
+  count: 1
+
+namePrefix: dev-
+
+patches:
+  - target:
+      kind: Ingress
+      name: ingress-myservice
+    patch: |-
+      - op: replace
+        path: /spec/rules/0/host
+        value: dev.10-0-10-13.sslip.io
+  - path: node-selector.yaml
+    target:
+      kind: Deployment

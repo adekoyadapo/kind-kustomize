@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  template:
+    spec:
+      nodeSelector:
+        env: stage

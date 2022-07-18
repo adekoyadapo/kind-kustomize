@@ -1,0 +1,30 @@
+---
+namespace: stage
+resources:
+  - ../../base
+
+patchesStrategicMerge:
+- mem.yaml
+
+images:
+- name: nginx
+  newName: httpd
+  newTag: latest
+
+replicas:
+- name: frontend
+  count: 2
+
+namePrefix: stage-
+
+patches:
+  - target:
+      kind: Ingress
+      name: ingress-myservice
+    patch: |-
+      - op: replace
+        path: /spec/rules/0/host
+        value: stage.10-0-10-13.sslip.io
+  - path: node-selector.yaml
+    target:
+      kind: Deployment

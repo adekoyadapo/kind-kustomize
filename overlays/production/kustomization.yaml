@@ -9,12 +9,12 @@ patchesStrategicMerge:
 
 images:
 - name: nginx
-  newName: aade/nodeapp
-  newTag: latest
+  newName: aade/node
+  newTag: v1.0.0-prod
 
 replicas:
 - name: frontend
-  count: 2
+  count: 5
   
 namePrefix: prod-
 

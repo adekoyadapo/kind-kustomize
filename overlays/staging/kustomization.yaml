@@ -5,11 +5,12 @@ resources:
 
 patchesStrategicMerge:
 - mem.yaml
+- service.yaml
 
 images:
 - name: nginx
-  newName: httpd
-  newTag: latest
+  newName: aade/node
+  newTag: v1.0.0-stage
 
 replicas:
 - name: frontend

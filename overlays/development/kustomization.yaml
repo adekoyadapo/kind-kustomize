@@ -3,10 +3,13 @@ namespace: dev
 resources:
   - ../../base
 
+patchesStrategicMerge:
+- service.yaml
+
 images:
 - name: nginx
-  newName: nginx
-  newTag: 1.17.1
+  newName: aade/node
+  newTag: v1.0.0-dev
 
 replicas:
 - name: frontend

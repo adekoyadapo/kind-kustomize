@@ -1,31 +1,32 @@
----
 namespace: stage
 resources:
-  - ../../base
+- ../../base
 
 patchesStrategicMerge:
 - mem.yaml
 - service.yaml
 
 images:
-- name: nginx
+- name: node
   newName: aade/node
-  newTag: v1.0.0-stage
+  newTag: v1.0.1-stage
 
 replicas:
-- name: frontend
-  count: 2
+- count: 2
+  name: frontend
 
 namePrefix: stage-
 
 patches:
-  - target:
-      kind: Ingress
-      name: ingress-myservice
-    patch: |-
-      - op: replace
-        path: /spec/rules/0/host
-        value: stage.10-0-10-13.sslip.io
-  - path: node-selector.yaml
-    target:
-      kind: Deployment
+- patch: |-
+    - op: replace
+      path: /spec/rules/0/host
+      value: stage.10-0-10-13.sslip.io
+  target:
+    kind: Ingress
+    name: ingress-myservice
+- path: node-selector.yaml
+  target:
+    kind: Deployment
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

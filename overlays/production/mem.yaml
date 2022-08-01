@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-      - image: nginx
+      - image: node
         name: frontend
         resources:
           requests:

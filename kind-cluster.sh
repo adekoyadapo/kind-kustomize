@@ -8,6 +8,7 @@ if ! which kind;
      echo -e "\033[32mCreating Cluster with 3 nodes...\033[0m\n"
      kind create cluster --config cluster.yaml
      sleep 10
+     echo
      echo -e "\033[32mDeploying Nginx Ingress...\033[0m\n"
      kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml 
      kubectl wait --namespace ingress-nginx \

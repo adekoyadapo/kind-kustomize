@@ -4,6 +4,7 @@ resources:
 
 patchesStrategicMerge:
 - service.yaml
+- mem.yaml
 
 images:
 - name: node

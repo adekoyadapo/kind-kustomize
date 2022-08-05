@@ -9,7 +9,7 @@ patchesStrategicMerge:
 images:
 - name: node
   newName: aade/node
-  newTag: v1.0.1-prod
+  newTag: v1.0.0-prod
 
 replicas:
 - count: 5

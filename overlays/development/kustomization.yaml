@@ -8,10 +8,10 @@ patchesStrategicMerge:
 images:
 - name: node
   newName: aade/node
-  newTag: v1.0.1-dev
+  newTag: v1.0.0-dev
 
 replicas:
-- count: 1
+- count: 2
   name: frontend
 
 namePrefix: dev-

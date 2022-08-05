@@ -1,5 +1,10 @@
 #!/bin/bash
 
+kustomize version --short
+
+echo
+printf "\033c"
+
 if [ -z "$1" ] || [ -z "$2" ]; then
     echo "Pass required arguments !"
     echo "Usage: $0 NAMESPACE KUSTOMIZE_PATH"

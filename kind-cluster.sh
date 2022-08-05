@@ -1,4 +1,5 @@
 #!/bin/bash
+printf "\033c"
 if ! which kind;
   then
      echo	-e "\033[31mERROR:\033[0m kind not found\nPlease install kind - https://kind.sigs.k8s.io/ and try again...!!!"

@@ -21,7 +21,7 @@ patches:
 - patch: |-
     - op: replace
       path: /spec/rules/0/host
-      value: prod.10-0-10-13.sslip.io
+      value: prod.10-0-10-10.sslip.io
   target:
     kind: Ingress
     name: ingress-myservice
